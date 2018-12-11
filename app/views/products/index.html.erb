@@ -6,10 +6,10 @@
 <script>
 $(function() {
   $('.js-more').on('click', function() {
-    let id = $(this).data('id')
+    var id = $(this).data('id')
     $.get(`/products/${id}/description`, function(description) {
       $.get(`/products/${id}/inventory`, function(inventory) {
-        let availability = "Sold Out"
+        var availability = "Sold Out"
         if (inventory === "true") {
           availability = "Available"
         }
